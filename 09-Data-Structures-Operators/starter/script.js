@@ -783,20 +783,62 @@ const namaLengkap = 'Kim Do Yeon';
 // console.log(namaLengkap.length);
 // console.log(namaLengkap.indexOf('D'));
 // console.log(namaLengkap.lastIndexOf('o'));
-console.log(namaLengkap.indexOf('Yeon'));
-console.log(namaLengkap.slice(1));
+// console.log(namaLengkap.indexOf('Yeon'));
+// console.log(namaLengkap.slice(1));
 // console.log(namaLengkap.slice(0, 6));
 // console.log(namaLengkap.slice(0, namaLengkap.lastIndexOf('o')));
 // console.log(namaLengkap.slice(namaLengkap.lastIndexOf(' ') + 1));
 // console.log(namaLengkap.slice(-1));
 
-function chechMiddleSeat(seat) {
-  const s = seat.slice(-1);
-  if (s === 'C' || s === 'E') console.log('You Got Middle Seat 😁');
-  else console.log(`You Got Lucky 😎`);
-}
+// function chechMiddleSeat(seat) {
+//   const s = seat.slice(-1);
+//   if (s === 'C' || s === 'E') console.log('You Got Middle Seat 😁');
+//   else console.log(`You Got Lucky 😎`);
+// }
 
-chechMiddleSeat('11B');
-chechMiddleSeat('9C');
+// chechMiddleSeat('11B');
+// chechMiddleSeat('9C');
 
 // --- end of working with string part-1 ---
+
+// --- working with string part-2 ---
+
+const airplane = 'Garuda Indonesia';
+// console.log(airplane[0]);
+// console.log(airplane.toLowerCase());
+// console.log(airplane.toUpperCase());
+// console.log(airplane.slice(airplane.lastIndexOf(' ')).toLowerCase());
+// console.log(airplane.slice(0));
+const namaAlay = 'MaMAn KuSnaeDI';
+const namaAlayLower = namaAlay.toLowerCase();
+const correctNamaAlay =
+  namaAlayLower[0].toUpperCase() +
+  namaAlayLower.slice(1, namaAlayLower.indexOf(' ')) +
+  ' ' +
+  namaAlayLower[namaAlayLower.lastIndexOf(' ') + 1].toUpperCase() +
+  namaAlayLower.slice(namaAlayLower.lastIndexOf(' ') + 2);
+console.log(correctNamaAlay);
+
+// COMPARING EMAIL
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n    ';
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+// console.log(lowerEmail);
+// console.log(trimmedEmail);
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(normalizedEmail === email);
+
+// replace method
+const namaSaya = 'Regi Aman Subakti';
+const ubahNamaSaya = namaSaya.replace('Regi', 'Eko');
+console.log(ubahNamaSaya);
+const announcement =
+  'diberitahukan kepada murid sdn sungai andai untuk segera berkumpul dilapangan, segera!!!';
+console.log(announcement.replace('segera', 'secepatnya'));
+console.log(announcement.replaceAll('segera', 'secepatnya'));
+// menggunakan regex
+console.log(announcement.replace(/segera/g, 'secepatnya'));
+
+// --- end of working with string part-2 ---
