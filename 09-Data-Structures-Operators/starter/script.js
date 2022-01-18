@@ -813,32 +813,97 @@ const namaAlay = 'MaMAn KuSnaeDI';
 const namaAlayLower = namaAlay.toLowerCase();
 const correctNamaAlay =
   namaAlayLower[0].toUpperCase() +
-  namaAlayLower.slice(1, namaAlayLower.indexOf(' ')) +
-  ' ' +
+  namaAlayLower.slice(1, namaAlayLower.indexOf(' ')+1) +
   namaAlayLower[namaAlayLower.lastIndexOf(' ') + 1].toUpperCase() +
   namaAlayLower.slice(namaAlayLower.lastIndexOf(' ') + 2);
-console.log(correctNamaAlay);
+// console.log(correctNamaAlay);
 
 // COMPARING EMAIL
 const email = 'hello@jonas.io';
 const loginEmail = '  Hello@Jonas.Io \n    ';
 const lowerEmail = loginEmail.toLowerCase();
 const trimmedEmail = lowerEmail.trim();
-// console.log(lowerEmail);
-// console.log(trimmedEmail);
 const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
-console.log(normalizedEmail === email);
+// console.log(normalizedEmail);
+// console.log(normalizedEmail === email);
 
 // replace method
 const namaSaya = 'Regi Aman Subakti';
 const ubahNamaSaya = namaSaya.replace('Regi', 'Eko');
-console.log(ubahNamaSaya);
+// console.log(ubahNamaSaya);
 const announcement =
   'diberitahukan kepada murid sdn sungai andai untuk segera berkumpul dilapangan, segera!!!';
-console.log(announcement.replace('segera', 'secepatnya'));
-console.log(announcement.replaceAll('segera', 'secepatnya'));
+// console.log(announcement.replace('segera', 'secepatnya'));
+// console.log(announcement.replaceAll('segera', 'secepatnya'));
 // menggunakan regex
-console.log(announcement.replace(/segera/g, 'secepatnya'));
+// console.log(announcement.replace(/segera/g, 'secepatnya'));
 
+// boolean
+const plane = 'Airbus A320neo';
+console.log(plane.includes('neo'));
+console.log(plane.includes('23Neo'));
+console.log(plane.startsWith('Airbus'));
+
+if(plane.startsWith('Airbus') &&  plane.includes('A320')){
+  console.log(`Part of the NEW Airbus Family`);
+}
+
+// practice exercise
+const checkBaggage = function (items){
+  items.toLowerCase();
+  if(items.includes('knife') || items.includes('gun')){
+    console.log('You are NOT allowed on board');
+  }else{
+    console.log('Welcome abord');
+  }
+}
+
+checkBaggage('knife');
+checkBaggage('some food and gun for protection');
+checkBaggage('phone and laptop')
+// console.log('a+very+nice+code'.replaceAll('+',' '));
 // --- end of working with string part-2 ---
+
+// --- working with string part-3 ---
+// split and join
+console.log('a+very+nice+song'.split('+'));
+const namaDoi ='kim do yeon selca'.split(' ');
+const [firstName,...lastName] = namaDoi;
+const newName = ['Mrs.', firstName, lastName].join(' ').replaceAll(',', ' ');
+// console.log(firstName,lastName.join(' '));
+console.log(newName);
+
+const capitalizeName = function (name){
+  const names = name.split(' ');
+  const namesUppercase = [];
+  for (const n of names) {
+    // namesUppercase.push(n[0].toUpperCase() + n.slice(1));
+    namesUppercase.push(n.replace(n[0], n[0].toUpperCase()))
+  }
+  console.log(namesUppercase.join(' '));
+}
+capitalizeName('kim do yeon');
+capitalizeName('usup kurniawan subli');
+capitalizeName('takya genji kurniawan khannedy');
+
+// padding
+const username = 'rahmannudn';
+console.log(username.padStart(20,'*').padEnd(25,'+'));
+console.log(username.padStart(15,'+').padEnd(21,'()'));
+
+const createMaskedNumber = function (number){
+  const maskNumber = number + '';
+  return maskNumber.slice(-4).padStart(maskNumber.length,'*');
+}
+console.log(createMaskedNumber(93239082));
+
+// repeat
+const message2 = 'Bad Weather... All Departures Delayed';
+console.log(message2.repeat(2));
+
+function planesInLine(n){
+  console.log(`There Are ${n} planes in line ${'✈'.repeat(n)}`);
+}
+planesInLine(5);
+
+// --- end of working with string part-3 ---
